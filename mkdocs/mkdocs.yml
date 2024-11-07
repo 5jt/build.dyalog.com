@@ -1,0 +1,97 @@
+site_name: System building with Dyalog APL
+repo_url: https://github.com/5jt/build.dyalog.com
+repo_name: build.dyalog.com
+
+nav:
+  - Home:
+    - Start here: index.md
+    - Tools: workbench.md
+    # - Agenda: agenda.md
+  - Articles:
+    - Introduction: articles/index.md
+    - Configuration: articles/configuration.md
+    - Containers: articles/containers.md
+    - DotNet: articles/dotnet.md
+    - Errors: articles/errors.md
+    - Files: articles/filesystem.md
+    - GUI: articles/gui.md
+    - Help: articles/help.md
+    - IPC: articles/ipc.md
+    - Logging: articles/logging.md
+    - Packages: articles/packages.md
+    - Project: articles/project.md
+    - Source-code: articles/source-code.md
+    - Testing: articles/testing.md
+    - Text: articles/text.md
+    - Transforms: articles/transforms.md
+  # - Devt tools:
+  #   - About: devtools/index.md
+  #   - Code management: devtools/code-management.md
+  #   - Error handling: devtools/error-handling.md
+  #   - Find & replace: devtools/find-replace.md
+  #   - IDE: devtools/ide.md
+  #   - Logging: devtools/logging.md
+  #   - Package manager: devtools/package-manager.md
+  #   - Project manager: devtools/project-manager.md
+  #   - Testing: devtools/testing.md
+  #   - User commands: devtools/user-commands.md
+  - System functions:
+    - About: sysfns/index.md
+    - ⎕CSV: sysfns/qcsv.md
+    - ⎕DR: sysfns/qdr.md
+    - ⎕JSON: sysfns/qjson.md
+    - ⎕SHELL: sysfns/qshell.md
+    - ⎕XML: sysfns/qxml.md
+  - Library:
+    - About: library/index.md
+    - EWS: library/ews.md
+    - Jarvis: library/jarvis.md
+    - HttpCommand: library/httpcommand.md
+    - Link: https://dyalog.github.io/link
+  - Examples:
+    - About: examples/index.md
+    - Package: examples/package.md
+    - DSL: examples/dsl.md
+    - Desktop: examples/desktop.md
+    - Web service: examples/web-service.md
+    - Web app: examples/web-app.md
+
+    
+theme:
+  favicon: 'img/favicon-32.png'
+  logo: 'img/dyalog-white.svg'
+  features:
+    - content.tabs.link
+    - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+  name: material
+
+extra:
+  version:
+    provider: mike
+
+extra_css:
+  - style/main.css
+  - style/admonition-ucmdhelp.css
+
+plugins:
+  - search
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.mark
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tilde
