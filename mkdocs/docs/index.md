@@ -38,19 +38,19 @@ It does not. Our aim here – extending what you’ve already achieved – is to
 
 ## What’s here
 
-Articles
-: The articles introduce various aspects of producing a software application.
+[Tools](workbench.md)
+: Profit from the experience of seasoned APL developers – adopt their tools!
 
-Development tools
-: Profit from the experience of seasoned APL developers º– adopt their tools!
+[Articles](articles/index.md)
+: Introducing the various aspects of producing a software application.
 
-System functions
+[System functions](sysfns/index.md)
 : The most useful code packages are built right into the interpreter, always there.
 
-Library
+[Library](library/index.md)
 : Code packages for common tasks: no need to reinvent the wheel.
 
-Examples
+[Examples](examples/index.md)
 : We take a tiny group of functions and turn them into a code package, a DSL, a desktop application, a Web application, and a Web service (API).
 
 *[DSL]: Domain-specific language
