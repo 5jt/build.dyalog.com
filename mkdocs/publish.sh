@@ -5,7 +5,7 @@ COMMIT_MSG=${1:-"Work in progress $(date)"}
 HOST='lambent.net'
 SITEDIR='site'
 USR='stephen'
-WEBSITE='lambenttechnology.com/wireframes'
+WEBSITE='lambenttechnology.com/wireframes/build.dyalog.com'
 
 git add . && \
 git commit -m $COMMIT_MSG && \
