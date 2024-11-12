@@ -52,7 +52,7 @@ nav:
     - About: examples/index.md
     - Functions: examples/functions.md
     - Package: examples/package.md
-    - DSL*: examples/dsl.md
+    - DSL: examples/dsl.md
     - Desktop*: examples/desktop.md
     - Web service*: examples/web-service.md
     - Web app*: examples/web-app.md

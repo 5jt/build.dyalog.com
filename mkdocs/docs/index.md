@@ -15,10 +15,10 @@ You want to write an application in Dyalog APL.
 You have already succeeded in turning some of your specialist knowledge into functions that help your work. 
 The code works for you! 
 
-Now you want to take it to the next level. 
+Now you want to take your code to the next level. 
 At the very least make it more robust and handy for your own use.
 Possibly turn it into an application others can use.
-Perhaps even pay you for! 
+Maybe even pay you for! 
 
 We assume 
 
