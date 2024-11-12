@@ -50,6 +50,7 @@ nav:
     - Link: https://dyalog.github.io/link
   - Examples:
     - About: examples/index.md
+    - Functions: examples/functions.md
     - Package: examples/package.md
     - DSL: examples/dsl.md
     - Desktop: examples/desktop.md
