@@ -1,1 +1,1 @@
-==FIXME This page is a stub.==
+==DRAFT: Pages with asterisked titles are empty stubs.==

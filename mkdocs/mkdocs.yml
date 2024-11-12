@@ -9,21 +9,21 @@ nav:
     # - Agenda: agenda.md
   - Articles:
     - Introduction: articles/index.md
-    - Configuration: articles/configuration.md
-    - Containers: articles/containers.md
-    - DotNet: articles/dotnet.md
+    - Configuration*: articles/configuration.md
+    - Containers*: articles/containers.md
+    - DotNet*: articles/dotnet.md
     - Errors: articles/errors.md
-    - Files: articles/filesystem.md
-    - GUI: articles/gui.md
+    - Files*: articles/filesystem.md
+    - GUI*: articles/gui.md
     - Help: articles/help.md
-    - IPC: articles/ipc.md
-    - Logging: articles/logging.md
-    - Packages: articles/packages.md
-    - Project: articles/project.md
-    - Source-code: articles/source-code.md
-    - Testing: articles/testing.md
-    - Text: articles/text.md
-    - Transforms: articles/transforms.md
+    - IPC*: articles/ipc.md
+    - Logging*: articles/logging.md
+    - Packages*: articles/packages.md
+    - Project*: articles/project.md
+    - Source-code*: articles/source-code.md
+    - Testing*: articles/testing.md
+    - Text*: articles/text.md
+    - Transforms*: articles/transforms.md
   # - Devt tools:
   #   - About: devtools/index.md
   #   - Code management: devtools/code-management.md
@@ -36,26 +36,26 @@ nav:
   #   - Testing: devtools/testing.md
   #   - User commands: devtools/user-commands.md
   - System functions:
-    - About: sysfns/index.md
-    - ⎕CSV: sysfns/qcsv.md
-    - ⎕DR: sysfns/qdr.md
-    - ⎕JSON: sysfns/qjson.md
-    - ⎕SHELL: sysfns/qshell.md
-    - ⎕XML: sysfns/qxml.md
+    - About*: sysfns/index.md
+    - ⎕CSV*: sysfns/qcsv.md
+    - ⎕DR*: sysfns/qdr.md
+    - ⎕JSON*: sysfns/qjson.md
+    - ⎕SHELL*: sysfns/qshell.md
+    - ⎕XML*: sysfns/qxml.md
   - Library:
-    - About: library/index.md
-    - EWS: library/ews.md
-    - Jarvis: library/jarvis.md
-    - HttpCommand: library/httpcommand.md
-    - Link: https://dyalog.github.io/link
+    - About*: library/index.md
+    - EWS*: library/ews.md
+    - Jarvis*: library/jarvis.md
+    - HttpCommand*: library/httpcommand.md
+    - Link*: https://dyalog.github.io/link
   - Examples:
     - About: examples/index.md
     - Functions: examples/functions.md
     - Package: examples/package.md
-    - DSL: examples/dsl.md
-    - Desktop: examples/desktop.md
-    - Web service: examples/web-service.md
-    - Web app: examples/web-app.md
+    - DSL*: examples/dsl.md
+    - Desktop*: examples/desktop.md
+    - Web service*: examples/web-service.md
+    - Web app*: examples/web-app.md
 
     
 theme:

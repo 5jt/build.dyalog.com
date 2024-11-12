@@ -5,6 +5,8 @@ author: Stephen Taylor
 ---
 # Example application
 
+==DRAFT: Pages with asterisked titles are empty stubs.==
+
 
 In this section we take a collection of functions and turn them into different forms of usable software. 
 
@@ -17,14 +19,10 @@ Our examples are chosen to be simple without quite being trivial.[^code]
 The functions here calculate [descriptive statistics](https://en.wikipedia.org/wiki/Descriptive_statistics "Wikipedia") of the simplest kind. 
 (Some of the functions are no more than [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar "Wikipedia").)
 
-The functions are perfect for your use.
-Everything you need and nothing more.
-They pass the tests you have written for them.
-
 We proceed in stages.
 
 -   Share with other APL programmers as a [Tatin](https://tatin.dev) package
--   Provide as a DSL to other APL users
+-   Provide as a [DSL](https://en.wikipedia.org/wiki/Domain-specific_language "Wikipedia") to other APL users
 -   Publish as a desktop application
 -   Provide as a Web or intranet application
 -   Provide as a Web API

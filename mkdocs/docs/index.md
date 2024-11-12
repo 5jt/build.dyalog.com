@@ -5,6 +5,7 @@ author: Stephen Taylor
 ---
 # System building with Dyalog APL
 
+
 ![Paula](img/paula.jpg){: style="border: 1px solid #eee"}
 
 ## Hello you

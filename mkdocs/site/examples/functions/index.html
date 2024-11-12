@@ -6,9 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="The basic functions, just as you use them">
+      
+      
+        <meta name="author" content="Stephen Taylor">
       
       
       
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../package/">
       
       
       <link rel="icon" href="../../img/favicon-32.png">
@@ -16,7 +24,7 @@
     
     
       
-        <title>Find replace - System building with Dyalog APL</title>
+        <title>The functions - System building with Dyalog APL</title>
       
     
     
@@ -64,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#the-functions" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -97,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Find replace
+              The functions
             
           </span>
         </div>
@@ -245,11 +258,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../examples/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   Examples
@@ -1072,6 +1087,8 @@
       
   
   
+    
+  
   
     
     
@@ -1081,12 +1098,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1100,7 +1117,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Examples
@@ -1113,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1131,9 +1148,18 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../examples/functions/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1142,6 +1168,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1153,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/package/" class="md-nav__link">
+      <a href="../package/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1173,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/dsl/" class="md-nav__link">
+      <a href="../dsl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1193,7 +1220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/desktop/" class="md-nav__link">
+      <a href="../desktop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1213,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/web-service/" class="md-nav__link">
+      <a href="../web-service/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1233,7 +1260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../examples/web-app/" class="md-nav__link">
+      <a href="../web-app/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1271,6 +1298,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -1288,9 +1317,103 @@
   
 
 
-  <h1>Find replace</h1>
+<h1 id="the-functions">The functions</h1>
+<p>The functions calculate various simple descriptive statistics. </p>
+<p>Most of these have obvious definitions for vector arguments, but have been coded here to work also on matrices along their <em>leading</em> axes.
+That is, the mean of a matrix is calculated as the means of its columns.</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="nv">srt</span><span class="kd">←</span><span class="kt">{</span><span class="m">1</span><span class="o">=≢⍴</span><span class="bp">⍵:⍵</span><span class="sr">[</span><span class="o">⍋</span><span class="bp">⍵</span><span class="sr">]</span><span class="w"> </span><span class="p">⋄</span><span class="w"> </span><span class="o">⍉</span><span class="p">(</span><span class="bp">∇</span><span class="na">⍤</span><span class="m">1</span><span class="p">)</span><span class="o">⍉</span><span class="bp">⍵</span><span class="w"> </span><span class="kt">}</span><span class="w">      </span><span class="c1">⍝ ascending sort</span>
+<span class="w"> </span><span class="nv">mean</span><span class="kd">←</span><span class="kt">{</span><span class="p">(</span><span class="o">+</span><span class="na">⌿</span><span class="bp">⍵</span><span class="p">)</span><span class="o">÷≢</span><span class="bp">⍵</span><span class="kt">}</span><span class="w">                    </span><span class="c1">⍝ arithmetic mean</span>
+<span class="w"> </span><span class="nv">med</span><span class="kd">←</span><span class="kt">{</span><span class="w">                              </span><span class="c1">⍝ median</span>
+<span class="w">     </span><span class="nv">srtd</span><span class="kd">←</span><span class="nv">srt</span><span class="w"> </span><span class="bp">⍵</span>
+<span class="w">     </span><span class="o">×</span><span class="m">1</span><span class="o">|</span><span class="nv">hlf</span><span class="kd">←</span><span class="p">(</span><span class="o">≢</span><span class="bp">⍵</span><span class="p">)</span><span class="o">÷</span><span class="m">2</span><span class="bp">:</span><span class="p">(</span><span class="o">⌈</span><span class="nv">hlf</span><span class="p">)</span><span class="o">⌷</span><span class="nv">srtd</span>
+<span class="w">     </span><span class="o">⊃</span><span class="m">2</span><span class="o">÷</span><span class="na">⍨</span><span class="o">+</span><span class="na">/</span><span class="p">(</span><span class="nv">hlf</span><span class="o">+</span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="o">⌷</span><span class="na">¨</span><span class="o">⊂</span><span class="nv">srtd</span>
+<span class="w"> </span><span class="kt">}</span>
+<span class="w"> </span><span class="nv">mode</span><span class="kd">←</span><span class="kt">{</span><span class="w">                             </span><span class="c1">⍝ sample mode</span>
+<span class="w">     </span><span class="m">1</span><span class="o">=≢⍴</span><span class="bp">⍵:</span><span class="kt">{</span><span class="bp">⍺</span><span class="na">/⍨</span><span class="bp">⍵</span><span class="o">=⌈</span><span class="na">/</span><span class="bp">⍵</span><span class="kt">}</span><span class="na">/</span><span class="o">⊂</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="kt">{</span><span class="bp">⍺</span><span class="o">,≢</span><span class="bp">⍵</span><span class="kt">}</span><span class="na">⌸</span><span class="bp">⍵</span>
+<span class="w">     </span><span class="bp">∇</span><span class="na">¨</span><span class="o">⊂</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="bp">⍵</span>
+<span class="w"> </span><span class="kt">}</span>
+<span class="w"> </span><span class="nv">sd</span><span class="kd">←</span><span class="kt">{</span><span class="m">0.5</span><span class="o">*</span><span class="na">⍨</span><span class="nv">var</span><span class="w"> </span><span class="bp">⍵</span><span class="kt">}</span><span class="w">                    </span><span class="c1">⍝ popn std deviation</span>
+<span class="w"> </span><span class="nv">var</span><span class="kd">←</span><span class="kt">{</span><span class="nv">mean</span><span class="w"> </span><span class="m">2</span><span class="o">*</span><span class="na">⍨</span><span class="w"> </span><span class="bp">⍵</span><span class="p">(</span><span class="o">-</span><span class="na">⍤</span><span class="m">1</span><span class="p">)</span><span class="nv">mean</span><span class="w"> </span><span class="bp">⍵</span><span class="kt">}</span><span class="w">        </span><span class="c1">⍝ variance</span>
+</code></pre></div>
+<p>There is also a file of tests</p>
+<table>
+<thead>
+<tr>
+<th>result</th>
+<th>expn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>V[⍋V]</code></td>
+<td><code>srt V</code></td>
+</tr>
+<tr>
+<td><code>⍉↑srt¨⊂[1]M</code></td>
+<td><code>srt M</code></td>
+</tr>
+<tr>
+<td><code>5.75</code></td>
+<td><code>mean V</code></td>
+</tr>
+<tr>
+<td><code>7.25 8.25 4 5.75 3.5</code></td>
+<td><code>mean M</code></td>
+</tr>
+<tr>
+<td><code>7</code></td>
+<td><code>med V</code></td>
+</tr>
+<tr>
+<td><code>med¨⊂[1]M</code></td>
+<td><code>med M</code></td>
+</tr>
+<tr>
+<td><code>⊂,7</code></td>
+<td><code>mode V</code></td>
+</tr>
+<tr>
+<td><code>mode¨⊂[1]M</code></td>
+<td><code>mode M</code></td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td><code>var 2 4 4 4 5 5 7 9 ⍝ wikipedia</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>sd 2 4 4 4 5 5 7 9 ⍝ wikipedia</code></td>
+</tr>
+<tr>
+<td><code>sd¨⊂[1]M</code></td>
+<td><code>sd M</code></td>
+</tr>
+<tr>
+<td><code>var¨⊂[1]M</code></td>
+<td><code>var M</code></td>
+</tr>
+</tbody>
+</table>
+<p>and a function to run them.</p>
+<div class="highlight"><pre><span></span><code><span class="bp">∇</span><span class="w"> </span><span class="nv">rpt</span><span class="kd">←</span><span class="kt">{</span><span class="nv">codes</span><span class="kt">}</span><span class="nv">RunTests</span><span class="w"> </span><span class="nv">path</span><span class="sr">;</span><span class="nv">exec</span><span class="sr">;</span><span class="nv">M</span><span class="sr">;</span><span class="nv">S</span><span class="sr">;</span><span class="nv">tst</span><span class="sr">;</span><span class="nv">tsts</span><span class="sr">;</span><span class="nv">V</span>
+<span class="w"> </span><span class="c1">⍝  e.g. RunTests &#39;core/tests.csv&#39;</span>
+<span class="w"> </span><span class="nv">V</span><span class="kd">←</span><span class="m">7</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">5</span>
+<span class="w"> </span><span class="nv">M</span><span class="kd">←</span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="o">⍴</span><span class="nv">V</span>
 
-<p><mark>FIXME This page is a stub.</mark></p>
+<span class="w"> </span><span class="c1">⍝ 0 1 2 &lt;=&gt; passed, failed, broke</span>
+<span class="w"> </span><span class="nv">exec</span><span class="kd">←</span><span class="kt">{</span><span class="m">0</span><span class="bp">::</span><span class="m">2</span><span class="w"> </span><span class="bp">⍺</span><span class="w"> </span><span class="bp">⍵</span><span class="w"> </span><span class="p">⋄</span><span class="w"> </span><span class="nv">z</span><span class="w"> </span><span class="nv">r</span><span class="kd">←</span><span class="o">⍎</span><span class="na">¨</span><span class="bp">⍺</span><span class="w"> </span><span class="bp">⍵</span><span class="w"> </span><span class="p">⋄</span><span class="w"> </span><span class="p">(</span><span class="nv">z</span><span class="o">≢</span><span class="nv">r</span><span class="p">)(</span><span class="bp">⍺</span><span class="p">)(</span><span class="bp">⍵</span><span class="p">)</span><span class="kt">}</span>
+
+<span class="w"> </span><span class="nv">tsts</span><span class="kd">←</span><span class="o">⊃</span><span class="nf">⎕CSV</span><span class="w"> </span><span class="nv">path</span><span class="s1">&#39;&#39;</span><span class="no">⍬</span><span class="w"> </span><span class="m">1</span>
+<span class="w"> </span><span class="nv">rpt</span><span class="kd">←</span><span class="m">0</span><span class="w"> </span><span class="m">3</span><span class="o">⍴</span><span class="m">0</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+<span class="w"> </span><span class="bp">:</span><span class="nv">For</span><span class="w"> </span><span class="nv">tst</span><span class="w"> </span><span class="bp">:</span><span class="nv">In</span><span class="w"> </span><span class="o">↓</span><span class="nv">tsts</span>
+<span class="w">     </span><span class="nv">rpt</span><span class="o">⍪</span><span class="kd">←</span><span class="o">⊃</span><span class="nv">exec</span><span class="na">/</span><span class="nv">tst</span>
+<span class="w"> </span><span class="bp">:</span><span class="nv">EndFor</span>
+
+<span class="w"> </span><span class="bp">:</span><span class="nv">If</span><span class="w"> </span><span class="m">2</span><span class="o">=</span><span class="nf">⎕NC</span><span class="s1">&#39;codes&#39;</span>
+<span class="w">     </span><span class="nv">rpt</span><span class="kd">←</span><span class="nv">rpt</span><span class="na">⌿⍨</span><span class="nv">rpt</span><span class="sr">[;</span><span class="m">1</span><span class="sr">]</span><span class="o">∊</span><span class="nv">codes</span>
+<span class="w"> </span><span class="bp">:</span><span class="nv">EndIf</span>
+<span class="bp">∇</span>
+</code></pre></div>
 
 
 

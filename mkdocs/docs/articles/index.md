@@ -5,6 +5,7 @@ author: Stephen Taylor
 ---
 # Make your code usable
 
+==DRAFT: Pages with asterisked titles are empty stubs.==
 
 !!! abstract "Making your code usable by others means solving certain problems."
 
